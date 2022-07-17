@@ -1,0 +1,18 @@
+   _____ _    _ _      ______  _            
+  / ____| |  | | |    |  ____|| |           
+ | |    | |__| | |    | |__ __| | _____   __
+ | |    |  __  | |    |  __/ _` |/ _ \ \ / /
+ | |____| |  | | |____| |_| (_| |  __/\ V / 
+  \_____|_|  |_|______|_(_)\__,_|\___| \_/                                            
+       _ _     _    _  ____      _            
+      | | |   | |  | |/ __ \    | |           
+      | | |   | |  | | |  | | __| | _____   __
+  _   | | |   | |  | | |  | |/ _` |/ _ \ \ / /
+ | |__| | |___| |__| | |__| | (_| |  __/\ V / 
+  \____/|______\____/ \____(_)__,_|\___| \_/  
+
+***
+This page symbolizes that the api server is active and functional.
+You likely landed on this page by mistake or your API call parameters are incorrect, please refer to the manpage for usage.
+
+Now... please leave. <3

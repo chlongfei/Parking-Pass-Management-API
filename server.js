@@ -1,22 +1,19 @@
 /**
- * Parking Pass Management APU
+ * Parking Pass Management API
  * LongFei Chen (chlf.dev)
  * July 14, 2022
  */
 
 import path from 'path';
 import express from 'express';
-import { getClientTypes, getPassTypes, getPasses, getPassAssignments, getClients, getHistory} from './util/queries.mjs';
+import { getClientTypes, getClients} from './util/clients.mjs';
+import { getPassTypes, getPasses, getPassAssignments, getHistory} from './util/passes.mjs';
 import { fileURLToPath } from 'url';
 const app = express();
-const port = 8000;
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 
-
-
-
-/* getters */
+/* GET */
 
 /**
  * returns list of client types
@@ -82,6 +79,6 @@ app.use('/', (req, res, next) =>{
 /**
  * express server listener
  */
-app.listen(port, ()=>{
-    console.log(`System now listening on port ${port}`)
+app.listen(process.env.WEB_PORT, ()=>{
+    console.log(`System now listening on port ${process.env.WEB_PORT}`)
 })

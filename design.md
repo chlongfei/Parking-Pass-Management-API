@@ -55,10 +55,10 @@ adds new pass types to the DB.
 | `typeName`        | required          | string    |
 | `typeDescription` | required          | string    |
 
-### getClientTypes()
+### ✔ getClientTypes()
 returns a JSON list of all client types in the DB.
 
-### addClientTypes(typeName, typeDescription)
+### ✔ addClientTypes(typeName, typeDescription)
 adds new pass types to DB.
 
 | Parameter         | Required/Optional | Data type |

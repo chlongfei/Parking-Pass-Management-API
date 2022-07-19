@@ -18,7 +18,7 @@ export function getPassTypes(){
  * @returns ID of new pass type record
  */
 export function addPassType(name, description){
-    let query = `INSERT INTO passTypes (passTypeName,passTypeDesc) VALUES (${name},${description}); SELECT last_insert_id() AS passTypeID;`;
+    let query = `INSERT INTO passTypes (passTypeName,passTypeDesc) VALUES ("${name}","${description}"); SELECT LAST_INSERT_ID() AS passTypeID;`;
     return runQuery(query);
 }
 

@@ -74,6 +74,16 @@ export function addAssignment(passID, clientID, clientPlateProv, clientPlateDigi
 }
 
 /**
+ * looks up pass assignment by pass id
+ * @param {int} passId 
+ * @returns json result of pass assignment
+ */
+ export function getPassAssignmentByPassId(passId){
+    let query = `SELECT * from assignments WHERE passID = ${passId}`;
+    return runQuery(query);
+}
+
+/**
  * @returns list of pass assignments
  */
 export function getHistory(){
@@ -92,13 +102,5 @@ export function addHistory(passID, desc){
     return runQuery(query);
 }
 
-/**
- * looks up pass assignment by pass id
- * @param {int} passId 
- * @returns json result of pass assignment
- */
- export function getPassAssignmentByPassId(passId){
-    let query = `SELECT * from assignments WHERE passID = ${passId}`;
-    return runQuery(query);
-}
+
 

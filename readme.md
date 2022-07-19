@@ -30,6 +30,14 @@ Malformed API calls are greeted with generic page at root `/` indicating server 
 ### Request
 `GET /api/g/p/assignments`
 
+## Get Pass Assignment by Pass ID
+### Request
+`GET /api/g/p/a/:id`
+
+| Parameter| Required/Optional| Data Type|
+|----------|------------------|----------|
+| `id`     | required         | integer  |
+
 ## Get List of All Pass Types
 ### Request
 `GET /api/g/p/types`

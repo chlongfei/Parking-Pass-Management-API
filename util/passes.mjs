@@ -3,12 +3,22 @@
  */
 import {runQuery} from './dbUtils.mjs';
 
-/* Getters */
 /**
- * @returns list of pass types
+ * @returns JSON list of all pass types in DB
  */
 export function getPassTypes(){
     let query = "SELECT * from passTypes;";
+    return runQuery(query);
+}
+
+/**
+ * adds a pass type to DB
+ * @param {string} name 
+ * @param {string} description 
+ * @returns ID of new pass type record
+ */
+export function addPassType(name, description){
+    let query = `INSERT INTO passTypes (passTypeName,passTypeDesc) VALUES (${name},${description}); SELECT last_insert_id() AS passTypeID;`;
     return runQuery(query);
 }
 

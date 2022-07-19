@@ -47,7 +47,7 @@
 ### ✔ getPassTypes()
 returns a JSON list of all pass types in the DB.
 
-### addPassType(typeName, typeDescription)
+### ✔ addPassType(typeName, typeDescription)
 adds new pass types to the DB.
 
 | Parameter         | Required/Optional | Data type |

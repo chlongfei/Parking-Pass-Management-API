@@ -44,4 +44,5 @@
         - histAction
 
 ## Functions
-- [ ] getPassTypes
+- [ ] getPassTypes()
+> returns 

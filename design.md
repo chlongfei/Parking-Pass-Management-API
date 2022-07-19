@@ -44,4 +44,4 @@
         - histAction
 
 ## Functions
-- [ ] create
+### - [] getPassTypes

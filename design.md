@@ -44,7 +44,7 @@
         - histAction
 
 ## Functions
-### getPassTypes()
+### ✔ getPassTypes()
 returns a JSON list of all pass types in the DB.
 
 ### addPassType(typeName, typeDescription)

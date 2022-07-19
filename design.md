@@ -111,12 +111,11 @@ adds a new assignment to DB.
 ### ✔ getHistory()
 returns a JSON list of all pass action history in DB.
 
-### addHistory(histTime, passID, desc)
+### ✔ addHistory(passID, desc)
 adds a history entry
 
 | Parameter         | Required/Optional | Data type |
 |-------------------|-------------------|-----------|
-| `histTime`        | required          | int       |
 | `passID`          | required          | int       |
 | `desc`            | optional          | string    |
 

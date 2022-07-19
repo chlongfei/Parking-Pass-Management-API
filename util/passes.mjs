@@ -47,7 +47,7 @@ export function getPassById(passId){
  * @returns 
  */
 export function addPass(type, start, end, notes){
-    let query = `INSERT INTO passes (passType,passIsValid,passNotes) VALUES (${type},TRUE,${notes}); SELECT last_insert_id() AS newID;`;
+    let query = `INSERT INTO passes (passType,passIsValid,passStart,passEnd,passNotes) VALUES (${type},TRUE, ${start}, ${end}, ${notes}); SELECT last_insert_id() AS newID;`;
     return runQuery(query);
 }
 
@@ -78,6 +78,17 @@ export function addAssignment(passID, clientID, clientPlateProv, clientPlateDigi
  */
 export function getHistory(){
     let query = "SELECT * from history;";
+    return runQuery(query);
+}
+
+/**
+ * adds an history entry
+ * @param {int} passID 
+ * @param {string} desc 
+ * @returns 
+ */
+export function addHistory(passID, desc){
+    let query = `INSERT INTO history (histTime,passID,histAction) VALUES ((SELECT NOW()),${passID},${desc}); SELECT LAST_INSERT_ID();`;
     return runQuery(query);
 }
 

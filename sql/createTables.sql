@@ -19,9 +19,9 @@ Create Table clients (
     clientID int not null auto_increment,
     clientName varchar(255) not null,
     clientType int not null,
-    clientContact varchar(255) not null,
-    clientPhone varchar(255) not null,
-    clientEmail varchar(255) not null,
+    clientContact varchar(255),
+    clientPhone varchar(255),
+    clientEmail varchar(255),
     primary key (clientID),
     foreign key (clientType) references clientTypes(clientTypeID)
 );

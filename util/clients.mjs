@@ -7,7 +7,7 @@ import {runQuery} from './dbUtils.mjs';
 /**
  * @returns list of client types
  */
- export function getClientTypes(){
+export function getClientTypes(){
     let query = "SELECT * from clientTypes;";
     return runQuery(query);
 }
@@ -15,7 +15,7 @@ import {runQuery} from './dbUtils.mjs';
 /**
  * @returns list of clients
  */
- export function getClients(){
+export function getClients(){
     let query = "SELECT * from clients;";
     return runQuery(query);
 }

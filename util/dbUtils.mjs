@@ -18,7 +18,8 @@ function sqlConnect(){
         host: process.env.SQL_SRC,
         user: process.env.SQL_USR,
         password: process.env.SQL_PWD,
-        database: process.env.SQL_DB
+        database: process.env.SQL_DB,
+        multipleStatements: true
     });
     return conn;
 }
@@ -31,7 +32,7 @@ function sqlConnect(){
 export function runQuery(query){
     let connection =  sqlConnect();
     return new Promise((resolve, reject) =>{
-        connection.execute(query, (error, result) =>{
+        connection.query(query, (error, result) =>{
             if(error) reject (error);
             resolve(result);
         });

@@ -18,6 +18,14 @@ Malformed API calls are greeted with generic page at root `/` indicating server 
 ### Request
 `GET /api/g/p`
 
+## Get Pass by ID
+### Request
+`GET /api/g/p/:id`
+
+| Parameter| Required/Optional| Data Type|
+|----------|------------------|----------|
+| `id`     | required         | integer  |
+
 ## Get List of Pass Assignments
 ### Request
 `GET /api/g/p/assignments`
@@ -33,3 +41,11 @@ Malformed API calls are greeted with generic page at root `/` indicating server 
 ## Get List of All Client Types
 ### Request 
 `GET /api/g/types`
+
+## Create New Pass
+### Request
+`GET /api/c/p/n/:type`
+
+| Parameter  | Required/Optional| Data Type|
+|------------|------------------|----------|
+| `type`     | required         | integer  |

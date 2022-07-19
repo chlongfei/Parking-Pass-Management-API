@@ -44,4 +44,4 @@
         - histAction
 
 ## Functions
-### - [ ] getPassTypes
+- [] getPassTypes

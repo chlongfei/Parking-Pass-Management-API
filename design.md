@@ -58,7 +58,7 @@ adds new pass types to the DB.
 ### ✔ getClientTypes()
 returns a JSON list of all client types in the DB.
 
-### ✔ addClientTypes(typeName, typeDescription)
+### ✔ addClientType(typeName, typeDescription)
 adds new pass types to DB.
 
 | Parameter         | Required/Optional | Data type |
@@ -66,10 +66,10 @@ adds new pass types to DB.
 | `typeName`        | required          | string    |
 | `typeDescription` | required          | string    |
 
-### getClients()
+### ✔ getClients()
 returns a JSON list of all clients in the DB.
 
-### addClient(name, type, contact, phone, email)
+### ✔ addClient(name, type, contact, phone, email)
 adds new client to DB.
 
 | Parameter | Required/Optional | Data type |
@@ -80,22 +80,23 @@ adds new client to DB.
 | `phone`   | required          | string    |
 | `email`   | required          | string    |
 
-### getPasses()
+### ✔ getPasses()
 returns a JSON list of all passes in DB.
 
-### addPasses(type, isValid, notes)
+### ✔ addPass(type, start, end, notes)
 adds a new pass to DB.
 
 | Parameter | Required/Optional | Data type |
 |-----------|-------------------|-----------|
 | `type`    | required          | int       |
-| `isValid` | required          | boolean   |
+| `start`   | required          | string    |
+| `end`     | required          | string    |
 | `notes`   | optional          | string    |
 
-### getAssignments()
+### ✔ getAssignments()
 returns a JSON list of all pass assignments in DB.
 
-### addAssignment(assnTime, passID, clientID, clientPlateProv, cilentPlateDigit, notes)
+### ✔ addAssignment(assnTime, passID, clientID, clientPlateProv, cilentPlateDigit, notes)
 adds a new assignment to DB.
 
 | Parameter         | Required/Optional | Data type |
@@ -107,7 +108,7 @@ adds a new assignment to DB.
 | `cilentPlateDigit`| optional          | string    |
 | `notes`           | optional          | string    |
 
-### getHistory()
+### ✔ getHistory()
 returns a JSON list of all pass action history in DB.
 
 ### addHistory(histTime, passID, desc)

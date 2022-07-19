@@ -41,20 +41,35 @@ export function getPassById(passId){
 }
 
 /**
+ * creates new pass entry
+ * @param {int} type 
+ * @param {string} notes 
+ * @returns 
+ */
+export function addPass(type, start, end, notes){
+    let query = `INSERT INTO passes (passType,passIsValid,passNotes) VALUES (${type},TRUE,${notes}); SELECT last_insert_id() AS newID;`;
+    return runQuery(query);
+}
+
+/**
  * @returns list of pass assignments
  */
-export function getPassAssignments(){
+export function getAssignments(){
     let query = "SELECT * from assignments;";
     return runQuery(query);
 }
 
 /**
- * looks up pass assignment by pass id
- * @param {int} passId 
- * @returns json result of pass assignment
+ * adds new pass assignment to DB
+ * @param {int} passID 
+ * @param {int} clientID 
+ * @param {string} clientPlateProv 
+ * @param {string} clientPlateDigit 
+ * @param {string} notes 
+ * @returns 
  */
-export function getPassAssignmentByPassId(passId){
-    let query = `SELECT * from assignments WHERE passID = ${passId}`;
+export function addAssignment(passID, clientID, clientPlateProv, clientPlateDigit, notes){
+    let query = `INSERT INTO assignments (assignmentTime,passID,clientId,clientPlateProv,clientPlateDigit,assignmentNotes) VALUES ((SELECT NOW()),${passID},${clientID},${clientPlateProv},${cilentPlateDigit},${notes}); SELECT LAST_INSERT_ID() AS assignmentID;`;
     return runQuery(query);
 }
 
@@ -66,15 +81,13 @@ export function getHistory(){
     return runQuery(query);
 }
 
-/* Setters */
-
 /**
- * creates new pass entry
- * @param {int} type 
- * @param {string} notes 
- * @returns 
+ * looks up pass assignment by pass id
+ * @param {int} passId 
+ * @returns json result of pass assignment
  */
-export function createPass(type,notes){
-    let query = `INSERT INTO passes (passType,passIsValid,passNotes) VALUES (${type},TRUE,${notes}); SELECT last_insert_id() AS newID;`;
+ export function getPassAssignmentByPassId(passId){
+    let query = `SELECT * from assignments WHERE passID = ${passId}`;
     return runQuery(query);
 }
+

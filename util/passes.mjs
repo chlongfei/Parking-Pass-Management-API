@@ -71,7 +71,8 @@ export function getAssignments(){
  * @returns 
  */
 export function addAssignment(passID, clientID, clientPlateProv, clientPlateDigit, notes){
-    let query = `INSERT INTO assignments (assignmentTime,passID,clientId,clientPlateProv,clientPlateDigit,assignmentNotes) VALUES ((SELECT NOW()),${passID},${clientID},${clientPlateProv},${cilentPlateDigit},${notes}); SELECT LAST_INSERT_ID() AS assignmentID;`;
+    if((notes === undefined)||(notes === null)) notes = "";
+    let query = `INSERT INTO assignments (assignmentTime,passID,clientId,clientPlateProv,clientPlateDigit,assignmentNotes) VALUES ((SELECT NOW()),${passID},${clientID},"${clientPlateProv}","${clientPlateDigit}","${notes}"); SELECT LAST_INSERT_ID() AS assignmentID;`;
     return runQuery(query);
 }
 

@@ -81,10 +81,10 @@ adds new pass types to the DB.
 | `typeName`        | required          | string    | name of pass type         |
 | `typeDescription` | required          | string    | decription of pass type   |
 
-### ✔ getPasses()
+### 🔗✔ getPasses()
 returns a JSON list of all passes in DB.
 
-### ✔ addPass(type, start, end, notes)
+### 🔗✔ addPass(type, start, end, notes)
 adds a new pass to DB.
 
 | Parameter | Required/Optional | Data type | Description                       |
@@ -94,10 +94,10 @@ adds a new pass to DB.
 | `end`     | optional          | string    | pass active period end [datetime](https://dev.mysql.com/doc/refman/8.0/en/datetime.html#:~:text=MySQL%20retrieves%20and%20displays%20DATETIME,both%20date%20and%20time%20parts.)        |
 | `notes`   | optional          | string    | pass notes                        |
 
-### ✔ getAssignments()
+### 🔗✔ getAssignments()
 returns a JSON list of all pass assignments in DB.
 
-### ✔ addAssignment(passID, clientID, clientPlateProv, cilentPlateDigit, notes)
+### 🔗✔ addAssignment(passID, clientID, clientPlateProv, cilentPlateDigit, notes)
 adds a new assignment to DB.
 
 | Parameter         | Required/Optional | Data type | Description               |
@@ -111,9 +111,9 @@ adds a new assignment to DB.
 ### ✔ getPassAssignmentByPassId(passId)
 returns JSON of pass assignment associated with specified pass Id
 
-| Parameter         | Required/Optional | Data type | Description               |
-|-------------------|-------------------|-----------|---------------------------|
-| `passID`          | required          | int       | id of pass assigned       |
+| Parameter         | Required/Optional | Data type | Description                     |
+|-------------------|-------------------|-----------|---------------------------------|
+| `assignmentID`    | required          | int       | id of the assignment record     |
 
 ### ✔ getHistory()
 returns a JSON list of all pass action history in DB.

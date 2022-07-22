@@ -6,7 +6,7 @@
 
 import path from 'path';
 import express from 'express';
-import { addPass, addPassType, getPasses, getPassTypes} from './util/passes.mjs';
+import { addAssignment, addPass, addPassType, getAssignments, getPasses, getPassTypes} from './util/passes.mjs';
 import { addClient, addClientTypes, getClients, getClientTypes } from './util/clients.mjs';
 import { fileURLToPath } from 'url';
 const app = express();
@@ -88,6 +88,21 @@ app.get('/api/p', (req,res)=>{
 app.post('/api/p', (req,res) => {
     addPass(req.body.type,req.body.start,req.body.end,req.body.notes).then(passId =>{
         res.type('application/json').send(passId[1][0]).status(200);
+    })
+})
+
+/**
+ * gets list of all pass assignments
+ */
+app.get('/api/a', (req,res)=>{
+    getAssignments().then(assign=>{
+        res.type('application/json').send(assign).status(200);
+    })
+})
+
+app.post('/api/a', (req,res)=>{
+    addAssignment(req.body.passId,req.body.clientId,req.body.clientPlateProv,req.body.clientPlateDigit,req.body.notes).then(assignId=>{
+        res.type('application/json').send(assignId[1][0]).status(200);
     })
 })
 

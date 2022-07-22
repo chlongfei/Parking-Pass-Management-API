@@ -38,3 +38,14 @@ Malformed API calls are greeted with generic page at root `/` indicating server 
         "passTypeID": 1
     }
 ```
+## Get List of Client Types
+### Request
+`GET /api/c/types`
+### Example Response
+```json
+    {
+        "clientTypeID": 1,
+        "clientTypeName": "Vendor",
+        "clientTypeDesc": "Vendor"
+    }
+```

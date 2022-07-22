@@ -7,6 +7,7 @@
 import path from 'path';
 import express from 'express';
 import { addPassType, getPassTypes} from './util/passes.mjs';
+import { getClientTypes } from './util/clients.mjs';
 import { fileURLToPath } from 'url';
 const app = express();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -20,7 +21,7 @@ app.use(express.json());
  */
 app.get(`/api/p/types`, (req,res)=>{
     getPassTypes().then( passTypes => {
-        res.type('application/json').send(passTypes[0]).status(200);
+        res.type('application/json').send(passTypes).status(200);
     })
 })
 
@@ -33,6 +34,16 @@ app.post('/api/p/type', (req,res)=>{
         res.type('application/json').send(typeID[1][0]).status(200);
     });
 })
+
+/**
+ * retrives JSON of client types
+ */
+app.get('/api/c/types',(req, res)=>{
+    getClientTypes().then(clientTypes =>{
+        res.type('application/json').send(clientTypes).status(200);
+    })
+})
+
 
 /**
  * default response for illegal api call

@@ -67,10 +67,10 @@ adds new pass types to DB.
 | `typeName`        | required          | string    | name of client type       |
 | `typeDescription` | required          | string    | description of client type|
 
-### ✔ getClients()
+### 🔗✔ getClients()
 returns a JSON list of all clients in the DB.
 
-### ✔ addClient(name, type, contact, phone, email)
+### 🔗✔ addClient(name, type, contact, phone, email)
 adds new client to DB.
 
 | Parameter | Required/Optional | Data type | Description                       |

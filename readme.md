@@ -65,3 +65,36 @@ Malformed API calls are greeted with generic page at root `/` indicating server 
         "passTypeID": 1
     }
 ```
+## Get List of Clients
+### Request
+`GET /api/c`
+### Example Response
+```json
+    {
+        "clientID": 1,
+        "clientName": "Vendor",
+        "clientType": 1,
+        "clientContact": "Jon Smith",
+        "clientPhone": "1234567890",
+        "clientEmail": "jsmith@example.com"
+    }
+```
+## Add Client
+### Request
+`POST /api/c'/type`'
+### Example Payload
+```json
+    {
+        "name": "Jon's Store",
+        "type": "1",
+        "contact": "Jon Smith",
+        "phone": "1234567890",
+        "email": "jsmith@example.com"
+    }
+```
+### Example Response
+```json
+    {
+        "clientID": 1
+    }
+```

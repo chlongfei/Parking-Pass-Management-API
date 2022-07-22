@@ -40,6 +40,6 @@ export function getClients(){
  * @returns 
  */
 export function addClient(name, type, contact, phone, email){
-    let query = `INSERT INTO clients (clientName,clientType,clientContact,clientPhone,clientEmail) VALUES (${name},${type},${contact},${phone},${email}); SELECT LAST_INSERT_ID() AS clientID;`;
+    let query = `INSERT INTO clients (clientName,clientType,clientContact,clientPhone,clientEmail) VALUES ("${name}",${type},"${contact}","${phone}","${email}"); SELECT LAST_INSERT_ID() AS clientID;`;
     return runQuery(query);
 }

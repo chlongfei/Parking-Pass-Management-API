@@ -73,12 +73,18 @@ app.post('/api/p/type', (req,res)=>{
     });
 });
 
+/**
+ * get list of all passes
+ */
 app.get('/api/p', (req,res)=>{
     getPasses().then(passes => {
         res.type('application/json').send(passes).status(200);
     })
 })
 
+/**
+ * add pass
+ */
 app.post('/api/p', (req,res) => {
     addPass(req.body.type,req.body.start,req.body.end,req.body.notes).then(passId =>{
         res.type('application/json').send(passId[1][0]).status(200);

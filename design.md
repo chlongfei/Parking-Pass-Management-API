@@ -90,8 +90,8 @@ adds a new pass to DB.
 | Parameter | Required/Optional | Data type | Description                       |
 |-----------|-------------------|-----------|-----------------------------------|
 | `type`    | required          | int       | pass type identifier              |
-| `start`   | required          | string    | pass active period start [datetime](https://dev.mysql.com/doc/refman/8.0/en/datetime.html#:~:text=MySQL%20retrieves%20and%20displays%20DATETIME,both%20date%20and%20time%20parts.)        |
-| `end`     | required          | string    | pass active period end [datetime](https://dev.mysql.com/doc/refman/8.0/en/datetime.html#:~:text=MySQL%20retrieves%20and%20displays%20DATETIME,both%20date%20and%20time%20parts.)        |
+| `start`   | required          | string    | pass active period start [datetime](https://dev.mysql.com/doc/refman/8.0/en/datetime.html#:~:text=MySQL%20retrieves%20and%20displays%20DATETIME,both%20date%20and%20time%20parts.) if null, will now `NOW()`       |
+| `end`     | optional          | string    | pass active period end [datetime](https://dev.mysql.com/doc/refman/8.0/en/datetime.html#:~:text=MySQL%20retrieves%20and%20displays%20DATETIME,both%20date%20and%20time%20parts.)        |
 | `notes`   | optional          | string    | pass notes                        |
 
 ### ✔ getAssignments()

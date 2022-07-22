@@ -47,7 +47,9 @@ export function getPassById(passId){
  * @returns 
  */
 export function addPass(type, start, end, notes){
-    let query = `INSERT INTO passes (passType,passIsValid,passStart,passEnd,passNotes) VALUES (${type},TRUE, ${start}, ${end}, ${notes}); SELECT last_insert_id() AS newID;`;
+    if(start === null) start = "NOW()";
+    if((notes === undefined) || (notes === null)) notes = "";
+    let query = `INSERT INTO passes (passType,passIsValid,passStart,passEnd,passNotes) VALUES (${type},TRUE, ${start}, ${end}, "${notes}"); SELECT last_insert_id() AS newID;`;
     return runQuery(query);
 }
 

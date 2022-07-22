@@ -31,8 +31,8 @@ Create Table passes (
     passID int not null auto_increment,
     passType int not null,
     passIsValid boolean not null,
-    passStart datetime not null,
-    passEnd datetime not null,
+    passStart date not null,
+    passEnd date,
     passNotes varchar(1000),
     primary key (passID),
     foreign key (passType) references passTypes(passTypeID)

@@ -6,7 +6,7 @@
 
 import path from 'path';
 import express from 'express';
-import { addPassType, getPassTypes} from './util/passes.mjs';
+import { addPass, addPassType, getPasses, getPassTypes} from './util/passes.mjs';
 import { addClient, addClientTypes, getClients, getClientTypes } from './util/clients.mjs';
 import { fileURLToPath } from 'url';
 const app = express();
@@ -72,6 +72,18 @@ app.post('/api/p/type', (req,res)=>{
         res.type('application/json').send(typeID[1][0]).status(200);
     });
 });
+
+app.get('/api/p', (req,res)=>{
+    getPasses().then(passes => {
+        res.type('application/json').send(passes).status(200);
+    })
+})
+
+app.post('/api/p', (req,res) => {
+    addPass(req.body.type,req.body.start,req.body.end,req.body.notes).then(passId =>{
+        res.type('application/json').send(passId[1][0]).status(200);
+    })
+})
 
 /**
  * default response for illegal api call

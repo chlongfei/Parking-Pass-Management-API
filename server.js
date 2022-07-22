@@ -7,7 +7,7 @@
 import path from 'path';
 import express from 'express';
 import { addPassType, getPassTypes} from './util/passes.mjs';
-import { getClientTypes } from './util/clients.mjs';
+import { addClientTypes, getClientTypes } from './util/clients.mjs';
 import { fileURLToPath } from 'url';
 const app = express();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -41,6 +41,16 @@ app.post('/api/p/type', (req,res)=>{
 app.get('/api/c/types',(req, res)=>{
     getClientTypes().then(clientTypes =>{
         res.type('application/json').send(clientTypes).status(200);
+    })
+})
+
+/**
+ * adds client type
+ * rseponds with new type id
+ */
+app.post('/api/c/type', (req,res)=>{
+    addClientTypes(req.body.typeName,req.body.typeDesc).then(typeID =>{
+        res.type('application/json').send(typeID[1][0]).status(200);
     })
 })
 

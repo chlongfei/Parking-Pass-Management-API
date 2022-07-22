@@ -18,7 +18,7 @@ export function getClientTypes(){
  * @returns new client type ID.
  */
 export function addClientTypes(name, description){
-    let query = `INSERT INTO clientTypes (clientTypeName,clientTypeDesc) VALUES (${name},${description}); SELECT LAST_INSERT_ID() AS typeID;`;
+    let query = `INSERT INTO clientTypes (clientTypeName,clientTypeDesc) VALUES ("${name}","${description}"); SELECT LAST_INSERT_ID() AS typeID;`;
     return runQuery(query);
 }
 

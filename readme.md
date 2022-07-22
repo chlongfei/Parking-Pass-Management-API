@@ -49,3 +49,19 @@ Malformed API calls are greeted with generic page at root `/` indicating server 
         "clientTypeDesc": "Vendor"
     }
 ```
+## Add Client Type
+### Request
+`POST /api/c/type`
+### Example Payload
+```json
+    {
+        "typeName": "name",
+        "typeDesc": "description"
+    }
+```
+### Example Response
+```json
+    {
+        "passTypeID": 1
+    }
+```

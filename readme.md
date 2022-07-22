@@ -97,3 +97,69 @@ Malformed API calls are greeted with generic page at root `/` indicating server 
         "passTypeID": 1
     }
 ```
+## Get List of Passes
+### Request
+`GET /api/p`
+### Example Response
+```json
+    {
+        "passID": 1,
+        "passType": 1,
+        "passIsValid": 1,
+        "passStart": "2022-07-22T00:00:00.000Z",
+        "passEnd": null,
+        "passNotes": "notes"
+    }
+```
+## Add Pass
+### Request
+`POST /api/p`
+### Example Payload
+```json
+    {
+        "type":1,
+        "start":null,
+        "end":null,
+        "noets":"notes"
+    }
+```
+### Example Response
+```json
+    {
+        "passID": 1
+    }
+```
+## Get List of Pass Assignments
+### Request
+`GET /api/a`
+### Example Response
+```json
+    {
+        "assignmentID": 1,
+        "assignmentTime": "2022-07-22T03:19:03.000Z",
+        "passID": 1,
+        "clientID": 1,
+        "clientPlateProv": "ON",
+        "clientPlateDigit": "ABC123",
+        "assignmentNotes": ""
+    }
+```
+## Add Pass Assignment
+### Request
+`POST /api/p`
+### Example Payload
+```json
+    {
+        "passId": 1,
+        "clientId":1,
+        "clientPlateProv": "ON",
+        "clientPlateDigit": "ABC123",
+        "notes": ""
+    }
+```
+### Example Response
+```json
+    {
+        "assignmentID": 1
+    }
+```

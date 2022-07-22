@@ -100,6 +100,10 @@ app.get('/api/a', (req,res)=>{
     })
 })
 
+/**
+ * adds pass assignment
+ * responds with assignment id
+ */
 app.post('/api/a', (req,res)=>{
     addAssignment(req.body.passId,req.body.clientId,req.body.clientPlateProv,req.body.clientPlateDigit,req.body.notes).then(assignId=>{
         res.type('application/json').send(assignId[1][0]).status(200);

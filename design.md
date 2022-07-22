@@ -108,17 +108,10 @@ adds a new assignment to DB.
 | `cilentPlateDigit`| optional          | string    | client lic. plate digits  |
 | `notes`           | optional          | string    | assignment notes          |
 
-### ✔ getPassAssignmentByPassId(passId)
-returns JSON of pass assignment associated with specified pass Id
-
-| Parameter         | Required/Optional | Data type | Description                     |
-|-------------------|-------------------|-----------|---------------------------------|
-| `assignmentID`    | required          | int       | id of the assignment record     |
-
-### ✔ getHistory()
+### 🔗✔ getHistory()
 returns a JSON list of all pass action history in DB.
 
-### ✔ addHistory(passID, desc)
+### 🔗✔ addHistory(passID, desc)
 adds a history entry
 
 | Parameter         | Required/Optional | Data type | Description               |
@@ -126,3 +119,9 @@ adds a history entry
 | `passID`          | required          | int       | id of pass actioned       |
 | `desc`            | optional          | string    | description of action     |
 
+### ✔ getPassAssignmentByPassId(passId)
+returns JSON of pass assignment associated with specified pass Id
+
+| Parameter         | Required/Optional | Data type | Description                     |
+|-------------------|-------------------|-----------|---------------------------------|
+| `assignmentID`    | required          | int       | id of the assignment record     |

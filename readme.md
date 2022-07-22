@@ -163,3 +163,31 @@ Malformed API calls are greeted with generic page at root `/` indicating server 
         "assignmentID": 1
     }
 ```
+## Get List of History Entries
+### Request
+`GET /api/h`
+### Example Response
+```json
+    {
+        "histID": 1,
+        "histTime": "2022-07-22T04:22:09.000Z",
+        "passID": 1,
+        "histAction": "test history"
+    }
+```
+## Add History Entry
+### Request
+`POST /api/h`
+### Example Payload
+```json
+    {
+        "passId":1,
+        "desc":"test history"
+    }
+```
+### Example Response
+```json
+    {
+        "entryId": 1
+    }   
+```

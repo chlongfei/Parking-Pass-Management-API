@@ -6,7 +6,7 @@
 
 import path from 'path';
 import express from 'express';
-import { addAssignment, addPass, addPassType, getAssignments, getPasses, getPassTypes} from './util/passes.mjs';
+import { addAssignment, addHistory, addPass, addPassType, getAssignments, getHistory, getPasses, getPassTypes} from './util/passes.mjs';
 import { addClient, addClientTypes, getClients, getClientTypes } from './util/clients.mjs';
 import { fileURLToPath } from 'url';
 const app = express();
@@ -107,6 +107,25 @@ app.get('/api/a', (req,res)=>{
 app.post('/api/a', (req,res)=>{
     addAssignment(req.body.passId,req.body.clientId,req.body.clientPlateProv,req.body.clientPlateDigit,req.body.notes).then(assignId=>{
         res.type('application/json').send(assignId[1][0]).status(200);
+    })
+})
+
+/**
+ * gets list of all history
+ */
+app.get('/api/h/', (req,res)=>{
+    getHistory().then(history=>{
+        res.type('application/json').send(history).status(200);
+    })
+})
+
+/**
+ * creates history entry
+ * returns history id
+ */
+app.post('/api/h', (req,res)=>{
+    addHistory(req.body.passId,req.body.desc).then(histId =>{
+        res.type('application/json').send(histId[1][0]).status(200);
     })
 })
 

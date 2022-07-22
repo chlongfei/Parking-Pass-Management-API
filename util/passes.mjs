@@ -101,7 +101,7 @@ export function getHistory(){
  * @returns 
  */
 export function addHistory(passID, desc){
-    let query = `INSERT INTO history (histTime,passID,histAction) VALUES ((SELECT NOW()),${passID},${desc}); SELECT LAST_INSERT_ID();`;
+    let query = `INSERT INTO history (histTime,passID,histAction) VALUES ((SELECT NOW()),${passID},"${desc}"); SELECT LAST_INSERT_ID() as entryId;`;
     return runQuery(query);
 }
 

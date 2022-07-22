@@ -17,25 +17,6 @@ app.use(express.json());
 /* CLIENT GETTERS */
 
 /**
- * retrives JSON of pass types
- */
-app.get(`/api/p/types`, (req,res)=>{
-    getPassTypes().then( passTypes => {
-        res.type('application/json').send(passTypes).status(200);
-    });
-});
-
-/**
- * adds pass type
- * responds with new type id
- */
-app.post('/api/p/type', (req,res)=>{
-    addPassType(req.body.typeName, req.body.typeDesc).then(typeID =>{
-        res.type('application/json').send(typeID[1][0]).status(200);
-    });
-});
-
-/**
  * retrives JSON of client types
  */
 app.get('/api/c/types',(req, res)=>{
@@ -73,6 +54,24 @@ app.post('/api/c', (req,res)=>{
     });
 });
 
+/**
+ * retrives JSON of pass types
+ */
+ app.get(`/api/p/types`, (req,res)=>{
+    getPassTypes().then( passTypes => {
+        res.type('application/json').send(passTypes).status(200);
+    });
+});
+
+/**
+ * adds pass type
+ * responds with new type id
+ */
+app.post('/api/p/type', (req,res)=>{
+    addPassType(req.body.typeName, req.body.typeDesc).then(typeID =>{
+        res.type('application/json').send(typeID[1][0]).status(200);
+    });
+});
 
 /**
  * default response for illegal api call

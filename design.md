@@ -45,17 +45,6 @@
 
 ## Functions
 > ✔  = Function Created 🔗 = API Available
-### 🔗✔ getPassTypes()
-returns a JSON list of all pass types in the DB.
-
-### 🔗✔ addPassType(typeName, typeDescription)
-adds new pass types to the DB.
-
-| Parameter         | Required/Optional | Data type | Description               |
-|-------------------|-------------------|-----------|---------------------------|
-| `typeName`        | required          | string    | name of pass type         |
-| `typeDescription` | required          | string    | decription of pass type   |
-
 ### 🔗✔ getClientTypes()
 returns a JSON list of all client types in the DB.
 
@@ -80,6 +69,17 @@ adds new client to DB.
 | `contact` | optional          | string    | name of contact for client        |
 | `phone`   | optional          | string    | phone number for contact          |
 | `email`   | optional          | string    | email for contact                 |
+
+### 🔗✔ getPassTypes()
+returns a JSON list of all pass types in the DB.
+
+### 🔗✔ addPassType(typeName, typeDescription)
+adds new pass types to the DB.
+
+| Parameter         | Required/Optional | Data type | Description               |
+|-------------------|-------------------|-----------|---------------------------|
+| `typeName`        | required          | string    | name of pass type         |
+| `typeDescription` | required          | string    | decription of pass type   |
 
 ### ✔ getPasses()
 returns a JSON list of all passes in DB.

@@ -10,34 +10,6 @@ API usage is described below. All responses are in JSON form.
 
 Malformed API calls are greeted with generic page at root `/` indicating server status.
 
-
-## Get List of Pass Types
-### Request
-`GET /api/p/types`
-### Example Response
-```json
-    {
-        "passTypeID": 1,
-        "passTypeName": "Vendor",
-        "passTypeDesc": "Vendor"
-    }
-```
-## Add Pass Type
-### Request
-`POST /api/p/type`
-### Example Payload
-```json
-    {
-        "typeName": "name",
-        "typeDesc": "description"
-    }
-```
-### Example Response
-```json
-    {
-        "passTypeID": 1
-    }
-```
 ## Get List of Client Types
 ### Request
 `GET /api/c/types`
@@ -96,5 +68,32 @@ Malformed API calls are greeted with generic page at root `/` indicating server 
 ```json
     {
         "clientID": 1
+    }
+```
+## Get List of Pass Types
+### Request
+`GET /api/p/types`
+### Example Response
+```json
+    {
+        "passTypeID": 1,
+        "passTypeName": "Vendor",
+        "passTypeDesc": "Vendor"
+    }
+```
+## Add Pass Type
+### Request
+`POST /api/p/type`
+### Example Payload
+```json
+    {
+        "typeName": "name",
+        "typeDesc": "description"
+    }
+```
+### Example Response
+```json
+    {
+        "passTypeID": 1
     }
 ```
